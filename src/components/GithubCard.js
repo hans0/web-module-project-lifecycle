@@ -6,7 +6,7 @@ class GithubCard extends React.Component {
     console.log(this.props);
     return (
       <div className='card'>
-        <img src={this.props.user.avatar_url}/>
+        <img src={this.props.user.avatar_url} alt="Profile picture"/>
         <div className='card-info'>
           <div className='name'>{this.props.user.name}</div>
           <p className='username'>{this.props.user.login}</p>
