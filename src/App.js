@@ -119,11 +119,15 @@ class App extends React.Component {
         </form>
         {this.state.user? <GithubCard user={this.state.user}/> : <></>}
         <button onClick={this.handleSeeFollowers}>See Followers</button>
-        {this.state.followers ?
-          this.state.followers.map((follower) => {
-            <GithubCard user={follower} />
-          }) 
-        : <>Loading</>}
+        <div className="followerContainer">
+          {this.state.followers.length > 0 ? 'wahoo' : 'sadness'}
+          {
+            this.state.followers.map(follower => {
+              return(<GithubCard user={follower} />);
+            }) 
+          }
+
+        </div>
       </div>
     );
   }
